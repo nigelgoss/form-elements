@@ -6,7 +6,7 @@
     <script>
       var $d = {};
       function get () { $d = $.formElements.get(document.querySelector("form")); }
-      function clear () { form.reset(); }
+      function clear () { document.querySelector("form").reset(); }
       function set () { $.formElements.set(document.querySelector("form"), $d); }
     </script>
   </head>

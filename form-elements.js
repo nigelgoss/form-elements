@@ -1,3 +1,4 @@
+if ($ === undefined) var $ = {};
 $.formElements = (function () {
 
   return {

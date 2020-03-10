@@ -3,7 +3,7 @@ $.formElements = (function () {
 
   return {
     
-  "completeForm": function ($section, $data) {
+  "set": function ($section, $data) {
 		Object.keys($data).forEach(function ($v) {
 			$section.querySelectorAll("*[name='"+$v+"']").forEach(function ($v2) {
 				if ($v2.tagName.toLowerCase() === "input" && $v2.type === "text") {	$v2.value = $data[$v]; }
@@ -15,24 +15,28 @@ $.formElements = (function () {
 		});
 	},
 
-	"serialize": function ($section) {
+	"get": function ($section) {
 		
 		var data = {};
 		
-		$section.querySelectorAll("*:not([ng-formelement]) input[type='text'][name]").forEach(function ($v) {
+		$section.querySelectorAll("input[type='text'][name]").forEach(function ($v) {
 			data[$v.name] = ($v.value === "") ? null : $v.value;
 		});
 		
-		$section.querySelectorAll("*:not([ng-formelement]) textarea[name]").forEach(function ($v) {
+		$section.querySelectorAll("input[type='password'][name]").forEach(function ($v) {
 			data[$v.name] = ($v.value === "") ? null : $v.value;
 		});
 		
-		$section.querySelectorAll("*:not([ng-formelement]) input[type='radio'][name]").forEach(function ($v) {
+		$section.querySelectorAll("textarea[name]").forEach(function ($v) {
+			data[$v.name] = ($v.value === "") ? null : $v.value;
+		});
+		
+		$section.querySelectorAll("input[type='radio'][name]").forEach(function ($v) {
 			if (data[$v.name] === undefined) data[$v.name] = null;
 			if ($v.checked === true) data[$v.name] = $v.value;
 		});
 		
-		$section.querySelectorAll("*:not([ng-formelement]) input[type='checkbox'][name]").forEach(function ($v) {
+		$section.querySelectorAll("input[type='checkbox'][name]").forEach(function ($v) {
 			if (data[$v.name] === undefined) data[$v.name] = [];
 			if ($v.checked === true) data[$v.name].push($v.value);
 		});

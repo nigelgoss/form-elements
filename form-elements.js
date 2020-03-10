@@ -43,5 +43,7 @@ $.formElements = (function () {
 		return data;
 		
 	};
+	  
+  }
 
 }());

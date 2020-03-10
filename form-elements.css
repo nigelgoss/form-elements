@@ -1,8 +1,9 @@
 @font-face { font-family:FontAwesome; src: url("fontawesome-webfont.woff"); }
 
-input[type="text"] { background: #fef9cc; }
 input[type="text"] { -webkit-appearance:none; background-color:#ffffff; padding:5px; width:100%; box-sizing:border-box; border:1px solid #bac2c8; border-radius:2px; }
 input[type="text"][readonly] { background-color: #fef9cc; }
+
+input[type="password"] { -webkit-appearance:none; background-color:#ffffff; padding:5px; width:100%; box-sizing:border-box; border:1px solid #bac2c8; border-radius:2px; }
 
 label { display:inline-block; cursor:pointer; padding:5px 20px 5px 0px; }
 

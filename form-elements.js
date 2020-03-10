@@ -6,7 +6,8 @@ $.formElements = (function () {
   "set": function ($section, $data) {
 		Object.keys($data).forEach(function ($v) {
 			$section.querySelectorAll("*[name='"+$v+"']").forEach(function ($v2) {
-				if ($v2.tagName.toLowerCase() === "input" && $v2.type === "text") {	$v2.value = $data[$v]; }
+				if ($v2.tagName.toLowerCase() === "input" && $v2.type === "text") { $v2.value = $data[$v]; }
+				else if ($v2.tagName.toLowerCase() === "input" && $v2.type === "password") { $v2.value = $data[$v]; }
 				else if ($v2.tagName.toLowerCase() === "textarea") { $v2.value = ($data[$v] === null) ? "" : $data[$v]; }
 				else if ($v2.tagName.toLowerCase() === "input" && $v2.type === "radio" && $v2.value === $data[$v]) { $v2.checked = true; }
 				else if ($v2.tagName.toLowerCase() === "input" && $v2.type === "checkbox" && $data[$v].indexOf($v2.value) > -1) { $v2.checked = true; }

@@ -5,7 +5,7 @@
     <script src="form-elements.js"></script>
     <script>
       var $d = {};
-      function get () { $d = $.formElements.get(document.querySelector("form")); }
+      function get () { $d = $.formElements.get(document.querySelector("form")); alert(JSON.stringify($d)); }
       function clr () { document.querySelector("form").reset(); }
       function set () { $.formElements.set(document.querySelector("form"), $d); }
     </script>

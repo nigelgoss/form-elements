@@ -1,1 +1,17 @@
-* { font-family:Arial; }
+input[type="text"] { background: #fef9cc; }
+input[type="text"] { -webkit-appearance:none; background-color:#ffffff; padding:5px; width:100%; box-sizing:border-box; border:1px solid #bac2c8; border-radius:2px; }
+input[type="text"][readonly] { background-color: #fef9cc; }
+
+label { display:inline-block; cursor:pointer; padding:5px 20px 5px 0px; }
+
+input[type="radio"] { width:0px; margin:0px; opacity:0; }
+input[type="radio"] + span::before { padding-right:10px; color:#0072CE; font-family:FontAwesome; font-size:1.5em; vertical-align:middle; }
+input[type="radio"]:checked + span::before { content:'\f192'; }
+input[type="radio"]:not(:checked) + span::before { content:'\f10c'; }
+
+input[type="checkbox"] { width:0px; margin:0px; opacity:0; }
+input[type="checkbox"] + span::before { padding-right:10px; color:#0072CE; font-family:FontAwesome; font-size:1.5em; vertical-align:middle; }
+input[type="checkbox"]:checked + span::before { content:'\f046'; }
+input[type="checkbox"]:not(:checked) + span::before { content:'\f096'; }
+
+textarea { -webkit-appearance:none; background:#ffffff; font-family:arial; min-height:100px; padding:5px; width:100%; box-sizing:border-box; border:1px solid #bac2c8; border-radius:2px; resize:none; }

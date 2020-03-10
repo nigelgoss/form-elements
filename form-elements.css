@@ -1,5 +1,4 @@
 @font-face { font-family:FontAwesome; src: url("fontawesome-webfont.woff"); }
-@font-face { font-family:FASolid; src: url("fa-solid-900.woff"); }
 
 input[type="text"] { background: #fef9cc; }
 input[type="text"] { -webkit-appearance:none; background-color:#ffffff; padding:5px; width:100%; box-sizing:border-box; border:1px solid #bac2c8; border-radius:2px; }

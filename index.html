@@ -3,6 +3,13 @@
   <head>
      <link rel="stylesheet" href="form-elements.css">
     <script src="form-elements.js"></script>
+    <script>
+      var $d = {};
+      var form = document.querySelector("form");
+      function get () { $d = $.formElements.get(form); }
+      function clear () { form.reset(); }
+      function set () { $.formElements.set(form, $d); }
+    </script>
   </head>
   <body>
   
@@ -21,6 +28,10 @@
         <label><input type="checkbox" name="checkbox" value="C" /><span>C</span></label>
      </td></tr>
       </table></form>
+    
+    <button onpointerdown="get();">Get</button>
+    <button onpointerdown="clear();">Clear</button>
+    <button onpointerdown="set();">Set</button>
     
   </body>
 </html>
